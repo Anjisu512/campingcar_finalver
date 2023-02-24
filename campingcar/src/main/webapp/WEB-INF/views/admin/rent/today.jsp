@@ -23,9 +23,10 @@
 	<%@ include file="../include/sidebar.jsp" %>
 	<!-- // #sidebar end -->
 	
-	<!-- #topmenu start -->
-	<%@ include file="../include/topmenu.jsp" %>
-	<!-- // #topmenu end -->
+	<div id="topmenu">
+		<h2><i class="fa-solid fa-house"></i> 관리자　<i class="fa-solid fa-angle-right"></i>　예약 관리　<i class="fa-solid fa-angle-right"></i>　오늘의 출고/반납 차량</h2>
+		<div id="gnb"></div>
+	</div>
 	
 	<div id="wrap">
 <!-- ================================================== -->
@@ -35,13 +36,14 @@
 .renttoday .col1, .renttoday .col2 {width:50%; float:left; min-height:300px;}
 .renttoday .col1 {padding:0px 15px 0px 0px;}
 .renttoday .col2 {padding:0px 0px 0px 15px;}
-.empty {background:#ffffff; border:1px solid #c8c8c8; padding:30px; text-align:center;}
+.renttoday table {cursor:pointer;}
+.empty {background:#e2e3e5; border:1px solid #c8c8c8; padding:30px; text-align:center; color:#787878;}
 </style>
 
 <div class="renttoday">
 
 	<div class="col1">
-		<h3>오늘의 출고 차량</h3>
+		<h3><i class="fa-sharp fa-solid fa-circle-up"></i> 오늘의 출고 차량</h3>
 		<c:if test="${not empty startlist }">
 			<c:forEach items="${startlist }" var="dto">
 			<div>
@@ -52,6 +54,11 @@
 					<col width="15%" />
 					<col width="35%" />
 				</colgroup>
+				<thead>
+				<tr>
+					<th colspan="4" class="state type0${dto.rent_paystate }">#${dto.rent_id } <span>${cateArr[dto.rent_paystate] }</span></th>
+				</tr>
+				</thead>
 				<tr>
 					<th>예약 번호</th>
 					<td>${dto.rent_id }</td>
@@ -75,7 +82,7 @@
 	</div>
 	
 	<div class="col2">
-		<h3>오늘의 반납 차량</h3>
+		<h3><i class="fa-sharp fa-solid fa-circle-down"></i> 오늘의 반납 차량</h3>
 		<c:if test="${not empty endlist }">
 			<c:forEach items="${endlist }" var="dto">
 			<div>
@@ -86,6 +93,11 @@
 					<col width="15%" />
 					<col width="35%" />
 				</colgroup>
+				<thead>
+				<tr>
+					<th colspan="4" class="state type0${dto.rent_paystate }">#${dto.rent_id } <span>${cateArr[dto.rent_paystate] }</span></th>
+				</tr>
+				</thead>				
 				<tr>
 					<th>예약 번호</th>
 					<td>${dto.rent_id }</td>

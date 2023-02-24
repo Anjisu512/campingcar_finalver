@@ -24,9 +24,10 @@
 	<%@ include file="../include/sidebar.jsp" %>
 	<!-- // #sidebar end -->
 
-	<!-- #topmenu start -->
-	<%@ include file="../include/topmenu.jsp" %>
-	<!-- // #topmenu end -->	
+	<div id="topmenu">
+		<h2><i class="fa-solid fa-house"></i> 관리자　<i class="fa-solid fa-angle-right"></i>　예약 관리　<i class="fa-solid fa-angle-right"></i>　예약 조회</h2>
+		<div id="gnb"></div>
+	</div>
 	
 	<div id="wrap">
 <!-- ================================================== -->
