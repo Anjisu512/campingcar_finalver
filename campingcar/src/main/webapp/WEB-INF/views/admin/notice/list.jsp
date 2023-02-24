@@ -129,7 +129,7 @@ font-weight : bold;
                 
 				
 				<!-- 각 번호 페이지 버튼 -->
-<<<<<<< HEAD
+
                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
                      <c:choose>
             
@@ -142,8 +142,8 @@ font-weight : bold;
 			            </c:otherwise>
 			            
 			          </c:choose>   
-        
-=======
+        		</c:forEach>
+
                 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
 					<c:choose>            
 						<c:when test="${pageMaker.cri.pageNum != num }">

@@ -132,11 +132,11 @@
  				
  				 <!-- 이전페이지 버튼 -->
                 <c:if test="${pageMaker.prev}">
-<<<<<<< HEAD
+
                     <li class="btn btn-outline-secondary"><a href="${pageMaker.startPage-1}">&laquo;</a></li>
-=======
+
                     <a class="btn btn-outline-secondary" href="${pageMaker.startPage-1}">&laquo;</a>
->>>>>>> 6ed552403be76ced568df3bf12640bb910044017
+
                 </c:if>
                 
                 
@@ -144,7 +144,7 @@
 				
 				<!-- 각 번호 페이지 버튼 -->
                 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-<<<<<<< HEAD
+
                      <c:choose>
             
 			            <c:when test="${pageMaker.cri.pageNum != num }">
@@ -159,7 +159,7 @@
         
                 </c:forEach>
 
-=======
+				<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
 					<c:choose>            
 						<c:when test="${pageMaker.cri.pageNum != num }">
 						<a class="<c:if test="${pageMaker.cri.pageNum != num }">btn btn-outline-secondary</c:if>"  href="${num}" >${num }</a>
