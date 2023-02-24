@@ -17,9 +17,6 @@
 <script>
 	$(document).ready(function() {
 		// 취소
-		$("#cencle").on("click", function() {
-			location.href = "${contextPath }/";
-		})
 
 		//아이디 유효성검사
 		$("#join").on("click", function() {
@@ -322,7 +319,8 @@ form {
 					</select><br>
 					<div class="input-bu">
 						<input class="btn btn-primary" type="submit" value="회원가입"
-							id="join"> <input class="btn btn-primary" type="reset"
+							id="join"> 
+							<input class="btn btn-primary" type="reset"
 							value="다시쓰기" id="cencle">
 					</div>
 				</form>

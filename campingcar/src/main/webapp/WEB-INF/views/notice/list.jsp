@@ -5,8 +5,8 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<c:set var="mn" value="2" />
-<c:set var="sn" value="1" />
+<c:set var="mn" value="6" />
+<c:set var="sn" value="2" />
 
 <!DOCTYPE html>
 <html>
@@ -25,8 +25,6 @@
 	}
 	h1 {
     font-size: 28px;
-    background: linear-gradient(to right top, #861657, #ffa69e);
-    color: transparent;
     -webkit-background-clip: text;
 }
 </style>
@@ -60,10 +58,11 @@
 				  <table class="table table-bordered text-center">
 				  <colgroup> 
 				</colgroup>
-<div style="text-align:center">
-<h1>가장 많은 질문들을 정리해 올렸습니다. 궁금한점이 있으면 확인해 주세요</h1>
+			<div style="text-align:center">
+		<h1>가장 많은 질문들을 정리해 올렸습니다. 궁금한점이 있으면 확인해 주세요</h1>
+	</div>
+</table>
 
-	
 </div>
 
 <!-- Main content -->
@@ -103,7 +102,7 @@
              </tr>
         </c:forEach>
 	</table>
-			<div style="text-align:right">
+			<div style="text-align:center">
 		 <div class="search_wrap ja">
         <div class="search_area">
         	   <select name="type">
@@ -114,30 +113,46 @@
                 <option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
                 <option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
                 <option value="TCW" <c:out value="${pageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
-            </select>   
-            <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
+            </select>
+           <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
             <button>검색</button>
-        </div>
-    </div> 
-  	 </div>  
-			<div class="container text-center">	
-	<div class="pageInfo_wrap ja" >
-        <div class="pageInfo_area">
- 			<ul id="pageInfo" class="pageInfo">
+          		</div>
+        			</div>
+        				</div>
+        					</div>
+        						</div>
+        					<div class="container text-center">	
+						<div class="pageInfo_wrap ja" >
+       				 <div class="pageInfo_area">
+ 				<ul id="pageInfo" class="pageInfo">
  				
  				 <!-- 이전페이지 버튼 -->
                 <c:if test="${pageMaker.prev}">
-                    <li class="pageInfo_btn previous"><a href="${pageMaker.startPage-1}">&laquo;</a></li>
+                    <a class="btn btn-outline-secondary" href="${pageMaker.startPage-1}">&laquo;</a>
                 </c:if>
+                
+                
+                
 				
 				<!-- 각 번호 페이지 버튼 -->
                 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-                    <a class="btn btn-secondary" href="${num}">${num}</a>
+					<c:choose>            
+						<c:when test="${pageMaker.cri.pageNum != num }">
+						<a class="<c:if test="${pageMaker.cri.pageNum != num }">btn btn-outline-secondary</c:if>"  href="${num}" >${num }</a>
+						</c:when>
+						            
+						<c:otherwise>
+						<a style="color: white;" class="btn btn-secondary" href="${num}" >${num }</a>
+						</c:otherwise>					            
+					</c:choose>        
                 </c:forEach>
+
+  
+
 
 				<!-- 다음 페이지 버튼 -->
 				<c:if test="${pageMaker.next}">
-					<a class="pageInfo_btn next" href="${pageMaker.endPage + 1 }">&raquo;</a>
+					<a class="btn btn-outline-secondary" href="${pageMaker.endPage + 1 }">&raquo;</a>
 				</c:if>
 				</ul>
 			</div>
@@ -162,6 +177,7 @@
 			</div>
 		</div>
 		<!--/.col (left) -->
+		</section>
      <script>
 $(document).ready(function(){
     
@@ -231,7 +247,7 @@ $(document).ready(function(){
 		
 	
 </script>
-</section>
+
 
 
   
