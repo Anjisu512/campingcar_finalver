@@ -48,7 +48,7 @@
 			<table class="table table-bordered">
 			<colgroup>
 				</colgroup>
-			  <h4><b>전체 글 목록입니다.</b></h4><br>
+		
 
 
 			<!-- /.panel-heading -->

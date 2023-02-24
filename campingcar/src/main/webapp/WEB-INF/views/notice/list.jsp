@@ -5,8 +5,8 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<c:set var="mn" value="2" />
-<c:set var="sn" value="1" />
+<c:set var="mn" value="6" />
+<c:set var="sn" value="2" />
 
 <!DOCTYPE html>
 <html>
@@ -25,9 +25,7 @@
 	}
 	h1 {
     font-size: 28px;
-    background: linear-gradient(to right top, #861657, #ffa69e);
-    color: transparent;
-    -webkit-background-clip: text;
+    
 }
 </style>
 <body>
@@ -127,18 +125,32 @@
  				
  				 <!-- 이전페이지 버튼 -->
                 <c:if test="${pageMaker.prev}">
-                    <li class="pageInfo_btn previous"><a href="${pageMaker.startPage-1}">&laquo;</a></li>
+                    <li class="btn btn-outline-secondary"><a href="${pageMaker.startPage-1}">&laquo;</a></li>
                 </c:if>
 				
 				<!-- 각 번호 페이지 버튼 -->
                 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-                    <a class="btn btn-secondary" href="${num}">${num}</a>
+                     <c:choose>
+            
+			            <c:when test="${pageMaker.cri.pageNum != num }">
+			            <a class="btn btn-outline-secondary" href="${num}">${num}</a>
+			            </c:when>
+			            
+			            <c:otherwise>
+			            <a style="color: white;" class="<c:if test="${pageMaker.cri.pageNum == num }">btn btn-secondary</c:if>"  href="${num}">${num}</a>
+			            </c:otherwise>
+			            
+			          </c:choose>   
+        
                 </c:forEach>
+
 
 				<!-- 다음 페이지 버튼 -->
 				<c:if test="${pageMaker.next}">
-					<a class="pageInfo_btn next" href="${pageMaker.endPage + 1 }">&raquo;</a>
+					<a class="btn btn-outline-secondary" href="${pageMaker.endPage + 1 }">&raquo;</a>
 				</c:if>
+								
+				
 				</ul>
 			</div>
 		</div>

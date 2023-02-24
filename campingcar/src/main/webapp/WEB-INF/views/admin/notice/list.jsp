@@ -123,17 +123,28 @@ font-size: 28px;
  				
  				 <!-- 이전페이지 버튼 -->
                 <c:if test="${pageMaker.prev}">
-                    <a class="pageInfo_btn previous" href="${pageMaker.startPage-1}">&laquo;</a>
+                    <a class="btn btn-outline-secondary" href="${pageMaker.startPage-1}">&laquo;</a>
                 </c:if>
 				
 				<!-- 각 번호 페이지 버튼 -->
-                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-                    <a class="btn btn-secondary" href="${num}">${num}</a>
+               <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+                     <c:choose>
+            
+			            <c:when test="${pageMaker.cri.pageNum != num }">
+			            <a class="btn btn-outline-secondary" href="${num}">${num}</a>
+			            </c:when>
+			            
+			            <c:otherwise>
+			            <a style="color: white;" class="<c:if test="${pageMaker.cri.pageNum == num }">btn btn-secondary</c:if>"  href="${num}">${num}</a>
+			            </c:otherwise>
+			            
+			          </c:choose>   
+        
                 </c:forEach>
 
 				<!-- 다음 페이지 버튼 -->
 				<c:if test="${pageMaker.next}">
-					<a class="pageInfo_btn next" href="${pageMaker.endPage + 1 }">&raquo;</a>
+					<a class="btn btn-outline-secondary" href="${pageMaker.endPage + 1 }">&raquo;</a>
 				</c:if>
 				</ul>
 			</div>

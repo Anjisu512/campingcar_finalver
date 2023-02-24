@@ -30,8 +30,8 @@
 	<ul class="clearfix">
 		<li><a href="${contextPath }/company/registerForm" class="btn btn-outline-light">캠핑카 대여 회사 등록 신청</a></li>
 		<li><a href="${contextPath }/garage/register" class="btn btn-outline-light">정비소 등록 신청</a></li>
-		<li><a href="${contextPath }/admin/garage/register" target="blank" class="btn btn-outline-light">정비소 등록신청 현황</a></li>
-		<li><a href="${contextPath }/admin/garage/list" target="blank" class="btn btn-outline-light">정비소 정보 수정 및 삭제</a></li>
+		<li><a href="#" target="blank" class="btn btn-outline-light">제휴회사A</a></li>
+		<li><a href="#" target="blank" class="btn btn-outline-light">제휴회사B</a></li>
 	</ul>
 </div>
 </div>

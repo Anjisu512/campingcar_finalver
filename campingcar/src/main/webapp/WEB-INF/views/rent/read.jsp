@@ -148,6 +148,7 @@ function rentCancel(rent_id){
 		<td colspan="7">일치하는 내용이 없습니다.</td>
 	</tr>
 </tbody>
+</table>
 </c:if>
 
 <!-- ================================================== -->		
