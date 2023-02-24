@@ -88,8 +88,7 @@ $(document).ready(function(){
 		$(this).find("#topmenu li > a").stop().animate({"width":"120px"},150, "easeOutCubic");
 	});	
 	
-	$("#topmenu li > a").each(function(index, item){
-	})	
+	$("#topmenu li > a").each(function(index, item){})	
 	
 });
 </script>

@@ -31,67 +31,81 @@
 <!-- ================================================== -->
 
 <style>
+.renttoday h3 {font-weight:bold; font-size:20px; padding:0px 0px 30px 0px;}
 .renttoday .col1, .renttoday .col2 {width:50%; float:left; min-height:300px;}
+.renttoday .col1 {padding:0px 15px 0px 0px;}
+.renttoday .col2 {padding:0px 0px 0px 15px;}
+.empty {background:#ffffff; border:1px solid #c8c8c8; padding:30px; text-align:center;}
 </style>
 
 <div class="renttoday">
 
 	<div class="col1">
 		<h3>오늘의 출고 차량</h3>
-		<c:forEach items="${startlist }" var="dto">
-		<div>
-			<table class="table table-bordered" onclick="location.href='read?rent_id=${dto.rent_id}&listtype=today';">
-			<colgroup>
-				<col width="15%" />
-				<col width="35%" />
-				<col width="15%" />
-				<col width="35%" />
-			</colgroup>
-			<tr>
-				<th>예약 번호</th>
-				<td>${dto.rent_id }</td>
-				<th>차량 번호</th>
-				<td>(${dto.car.car_regid }) [${dto.car.car_modelname }] ${dto.car.car_name }</td>
-			</tr>			
-
-			<tr>
-				<th>고객명</th>
-				<td>${dto.rent_name }</td>
-				<th>연락처</th>
-				<td>${dto.rent_phone1 }</td>
-			</tr>
-			</table>
-		</div>
-		</c:forEach>
+		<c:if test="${not empty startlist }">
+			<c:forEach items="${startlist }" var="dto">
+			<div>
+				<table class="table table-bordered" onclick="location.href='read?rent_id=${dto.rent_id}&listtype=today';">
+				<colgroup>
+					<col width="15%" />
+					<col width="35%" />
+					<col width="15%" />
+					<col width="35%" />
+				</colgroup>
+				<tr>
+					<th>예약 번호</th>
+					<td>${dto.rent_id }</td>
+					<th>차량 번호</th>
+					<td>(${dto.car.car_regid }) [${dto.car.car_modelname }] ${dto.car.car_name }</td>
+				</tr>			
+	
+				<tr>
+					<th>고객명</th>
+					<td>${dto.rent_name }</td>
+					<th>연락처</th>
+					<td>${dto.rent_phone1 }</td>
+				</tr>
+				</table>
+			</div>
+			</c:forEach>
+		</c:if>
+		<c:if test="${empty startlist }">
+			<div class="empty">오늘의 출고 차량이 없습니다.</div>
+		</c:if>
 	</div>
 	
 	<div class="col2">
 		<h3>오늘의 반납 차량</h3>
-		<c:forEach items="${endlist }" var="dto">
-		<div>
-			<table class="table table-bordered" onclick="location.href='read?rent_id=${dto.rent_id}&listtype=today';">
-			<colgroup>
-				<col width="15%" />
-				<col width="35%" />
-				<col width="15%" />
-				<col width="35%" />
-			</colgroup>
-			<tr>
-				<th>예약 번호</th>
-				<td>${dto.rent_id }</td>
-				<th>차량 번호</th>
-				<td>(${dto.car.car_regid }) [${dto.car.car_modelname }] ${dto.car.car_name }</td>
-			</tr>			
-
-			<tr>
-				<th>고객명</th>
-				<td>${dto.rent_name }</td>
-				<th>연락처</th>
-				<td>${dto.rent_phone1 }</td>
-			</tr>
-			</table>
-		</div>
-		</c:forEach>		
+		<c:if test="${not empty endlist }">
+			<c:forEach items="${endlist }" var="dto">
+			<div>
+				<table class="table table-bordered" onclick="location.href='read?rent_id=${dto.rent_id}&listtype=today';">
+				<colgroup>
+					<col width="15%" />
+					<col width="35%" />
+					<col width="15%" />
+					<col width="35%" />
+				</colgroup>
+				<tr>
+					<th>예약 번호</th>
+					<td>${dto.rent_id }</td>
+					<th>차량 번호</th>
+					<td>(${dto.car.car_regid }) [${dto.car.car_modelname }] ${dto.car.car_name }</td>
+				</tr>			
+	
+				<tr>
+					<th>고객명</th>
+					<td>${dto.rent_name }</td>
+					<th>연락처</th>
+					<td>${dto.rent_phone1 }</td>
+				</tr>
+				</table>
+			</div>
+			</c:forEach>
+		</c:if>
+		<c:if test="${empty endlist }">
+			<div class="empty">오늘의 반납 차량이 없습니다.</div>
+		</c:if>	
 	</div>
 
  </div>

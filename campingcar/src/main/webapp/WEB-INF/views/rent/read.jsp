@@ -81,7 +81,7 @@
 
 	<div class="input-group">
 		<span class="input-group-text">비밀번호</span>
-		<input type="text" class="form-control" name="rent_password" value="" required />
+		<input type="password" class="form-control" name="rent_password" value="" required />
 	</div>	
 	<div class="d-grid gap-2">
 		<button type="submit" class="btn btn-primary">예약 확인</button>
@@ -164,6 +164,16 @@ function rentCancel(rent_id){
 	</tr>
 </tbody>
 </c:if>
+
+<script>
+const result = "${result}"
+const msg = ""
+if(result){
+	if(result=="cancel"){
+		alert("예약이 취소되었습니다.")
+	}
+}
+</script>
 
 <!-- ================================================== -->		
 		</div> <!-- // #body_contents end -->

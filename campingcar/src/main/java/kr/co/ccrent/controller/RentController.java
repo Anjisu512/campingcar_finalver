@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.ccrent.config.DateProcess;
 import kr.co.ccrent.dto.CarDTO;
@@ -113,10 +114,11 @@ public class RentController {
 		model.addAttribute("check", 1);
 	}
 	@PostMapping("/cancel")
-	public String cancelPOST(RentDTO rentDTO) {
+	public String cancelPOST(RentDTO rentDTO, RedirectAttributes redirectAttributes) {
 		System.out.println("<Rent Controller> cancel POST");
 		System.out.println(rentDTO);
 		rentService.modifyCancel(rentDTO);
+		redirectAttributes.addFlashAttribute("result", "cancel");
 		return "redirect:/rent/read";
 	}
 	

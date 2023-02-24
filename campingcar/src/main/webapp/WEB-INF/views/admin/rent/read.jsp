@@ -63,7 +63,7 @@
 				<option value="${cate.key }" ${dto.rent_paystate eq cate.key?"selected":"" }>${cate.value }</option>	
 			</c:forEach>
 			</select>
-			<button type="submit">상태 변경</button>
+			<button type="submit" class="btn btn-primary btn-sm">상태 변경</button>
 			</form>
 		</c:if>
 		<c:if test="${dto.rent_state!=0 }">
@@ -101,7 +101,9 @@ function confirmAlert(){
 			<a class="btn btn-danger btn-sm" href="#" role="button" onclick="cancelAlert();">예약 취소</a>
 			</form>		
 		</c:if>
-		<c:if test="${dto.rent_state==0 or  dto.rent_state==2 }">&nbsp;</c:if>
+		<c:if test="${dto.rent_state==0 or  dto.rent_state==2 }">
+			<span style="color:#b4b4b4;">취소 신청한 예약만 취소처리할 수 있습니다.</span>
+		</c:if>
 	</td>
 </tr>
 <script>
@@ -117,7 +119,7 @@ function cancelAlert(){
 <tr><th>예약자</th><td>${dto.user_id }</td><th>유저 ID</th><td>${dto.user_id }</td></tr>
 <tr><th>필수 연락처</th><td>${dto.rent_phone1 }</td><th>예비 연락처</th><td>${dto.rent_phone2 }</td></tr>
 <tr><th>차량 출고일</th><td>${dto.rent_startdate }</td><th>차량 반납일</th><td>${dto.rent_enddate }</td></tr>
-<tr><th>옵션1</th><td>${dto.rent_option1 }</td><th>옵션2</th><td>${dto.rent_option1 }</td></tr>
+<!-- <tr><th>옵션1</th><td>${dto.rent_option1 }</td><th>옵션2</th><td>${dto.rent_option1 }</td></tr> -->
 <tr>
 	<th>결제 비용</th><td>${dto.rent_price }</td>
 	<th>결제 유형</th>

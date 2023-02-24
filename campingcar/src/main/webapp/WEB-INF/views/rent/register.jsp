@@ -77,6 +77,8 @@ String limitdate = sdf.format(lastcal.getTime());
 <div class="board_write">
 <form action="register" method="post" id="rent_form">
 <input type="hidden" name="rent_paystate" value="0" />
+<input type="hidden" name="rent_option1" value="0" />
+<input type="hidden" name="rent_option2" value="0" />
 	<div class="input-group">
 		<span class="input-group-text">차량 선택</span>
 		<select name="car_regid" class="form-control" onchange="if(this.value) location.href='register?car_regid='+(this.value)+'&rent_startdate=${param.rent_startdate}';">
@@ -98,8 +100,8 @@ String limitdate = sdf.format(lastcal.getTime());
 		</div>
 		<div class="input-group">
 			<span class="input-group-text">비밀번호</span>
-			<input type="text" class="form-control" name="rent_password" value="" required />
-			<input type="text" class="form-control" name="rent_password_check" value="" required />
+			<input type="password" class="form-control" name="rent_password" value="" required autocomplete="off" />
+			<input type="password" class="form-control" name="rent_password_check" value="" required autocomplete="off" />
 		</div>			
 	</c:if>
 	<!-- 회원 -->
@@ -122,20 +124,6 @@ String limitdate = sdf.format(lastcal.getTime());
 		<input type="text" name="diffdays" class="form-control" value="0박 0일" />
 		<input type="hidden" name="rent_startdate" value="" required />
 		<input type="hidden" name="rent_enddate" value="" required />
-	</div>
-		<div class="input-group">
-		<span class="input-group-text">추가 옵션1</span>
-		<select name="rent_option1" class="form-control">
-			<option value="0">선택 안함</option>
-			<option value="1">그릴, 석쇠, 집게, 목장갑, 참숫 [35,000원]</option>
-		</select>
-	</div>
-	<div class="input-group">
-		<span class="input-group-text">추가 옵션2</span>
-		<select name="rent_option2" class="form-control">
-			<option value="0">선택 안함</option>
-			<option value="1">위생 용품 [10,000원]</option>
-		</select>
 	</div>
 	<div class="input-group">
 		<span class="input-group-text">결제 비용</span>
@@ -267,6 +255,11 @@ function formsubmit(){
 	    $("input[name='rent_name']").focus();
 	    return false;
 	}	
+	if($("input[name='rent_password']").val() != $("input[name='rent_password_check']").val()){
+	    alert("비밀번호가 일치하지 않습니다.");
+	    $("input[name='rent_password']").focus();
+	    return false;
+	}		
 	if($("input[name='rent_phone1']").val() == ""){
 	    alert("핸드폰 번호를 입력하세요.");
 	    $("input[name='rent_phone1']").focus();

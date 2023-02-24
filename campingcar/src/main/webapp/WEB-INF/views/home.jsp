@@ -9,6 +9,7 @@
 <head>
 <title>자바 캠핑카</title>
 <link href="${contextPath}/resources/css/main_all.css" rel="stylesheet" />
+<link HREF = "http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"  rel="stylesheet" />
 <%@ include file="include/plugin.jsp" %>
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
@@ -44,12 +45,16 @@
 .para02 h3 {color:#ffffff;}
 .para02 .desc {color:rgba(255, 255, 255, 0.6);}
 .para02 ul {width:1230px;}
-.para02 li {float:left; margin:0px 30px 0px 0px;}
+.para02 li {float:left; margin:0px 30px 0px 0px; position:relative; top:0; left:0;}
 .para02 .icon {border-radius: 50%; border:1px solid #ffffff; width:175px; height:175px; text-align:center;}
 .para02 li i {color:#ffffff; font-size:80px; position:relative; top:40px;}
 .para02 li:nth-child(4) i {font-size:70px; top:50px;}
 .para02 li:nth-child(5) i {font-size:70px; top:50px;}
 .para02 .text {color:#ffffff; font-size:20px; text-align:center; padding:20px 0px 0px 0px; font-weight:bold;}
+
+/* mouseenter */
+.para02 li.on .icon {background:#ffffff;}
+.para02 li.on i {color:#0b3e09;}
 </style>
 
 
@@ -130,7 +135,6 @@
 
 <script>
 AOS.init();
-
 $(document).ready(function(){
 	var windowHeight = window.innerHeight;
 	$("#mainvisual").css({"height":windowHeight+"px"});
@@ -140,7 +144,16 @@ $(document).ready(function(){
 		  autoplay: true,
 		  autoplaySpeed: 2000,
 	});
+	$(".para02 li").each(function(index, item){
+		$(this).mouseenter(function(){
+			$(this).switchClass("","on",3000);
+		});
+		$(this).mouseleave(function(){
+			$(this).switchClass("on","",3000);
+		});		
+	})	
 });	
+
 </script>
 
 <!-- ================================================================================ -->		
