@@ -25,7 +25,8 @@
 	padding: 10px 0px;
 }
 h1 {
-font-size: 28px;
+font-size: 26px;
+font-weight : bold;
 -webkit-background-clip: text;
 }
 </style>
@@ -109,24 +110,26 @@ font-size: 28px;
             </select>   
             <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
             <button>검색</button>
-        </div>
-    </div> 
-  	 	</div> 
-  	 		</div>
-  	 			</div> 
-  	 		
-	<div class="box">
- 				<div class="container text-center">
-	<div class="pageInfo_wrap ja" >
-        <div class="pageInfo_area">
- 			<ul id="pageInfo" class="pageInfo">
+    			</div>
+        			</div>
+        				</div>
+        					</div>
+        						</div>
+  	 						<div class="container text-center">	
+						<div class="pageInfo_wrap ja" >
+       				 <div class="pageInfo_area">
+ 				<ul id="pageInfo" class="pageInfo">
  				
  				 <!-- 이전페이지 버튼 -->
                 <c:if test="${pageMaker.prev}">
                     <a class="btn btn-outline-secondary" href="${pageMaker.startPage-1}">&laquo;</a>
                 </c:if>
+                
+                
+                
 				
 				<!-- 각 번호 페이지 버튼 -->
+<<<<<<< HEAD
                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
                      <c:choose>
             
@@ -140,7 +143,22 @@ font-size: 28px;
 			            
 			          </c:choose>   
         
+=======
+                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+					<c:choose>            
+						<c:when test="${pageMaker.cri.pageNum != num }">
+						<a class="<c:if test="${pageMaker.cri.pageNum != num }">btn btn-outline-secondary</c:if>"  href="${num}" >${num }</a>
+						</c:when>
+						            
+						<c:otherwise>
+						<a style="color: white;" class="btn btn-secondary" href="${num}" >${num }</a>
+						</c:otherwise>					            
+					</c:choose>        
+>>>>>>> 6ed552403be76ced568df3bf12640bb910044017
                 </c:forEach>
+
+  
+
 
 				<!-- 다음 페이지 버튼 -->
 				<c:if test="${pageMaker.next}">

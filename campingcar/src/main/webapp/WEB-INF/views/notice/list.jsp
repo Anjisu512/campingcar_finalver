@@ -25,7 +25,11 @@
 	}
 	h1 {
     font-size: 28px;
+<<<<<<< HEAD
     
+=======
+    -webkit-background-clip: text;
+>>>>>>> 6ed552403be76ced568df3bf12640bb910044017
 }
 </style>
 <body>
@@ -58,10 +62,11 @@
 				  <table class="table table-bordered text-center">
 				  <colgroup> 
 				</colgroup>
-<div style="text-align:center">
-<h1>가장 많은 질문들을 정리해 올렸습니다. 궁금한점이 있으면 확인해 주세요</h1>
+			<div style="text-align:center">
+		<h1>가장 많은 질문들을 정리해 올렸습니다. 궁금한점이 있으면 확인해 주세요</h1>
+	</div>
+</table>
 
-	
 </div>
 
 <!-- Main content -->
@@ -101,7 +106,7 @@
              </tr>
         </c:forEach>
 	</table>
-			<div style="text-align:right">
+			<div style="text-align:center">
 		 <div class="search_wrap ja">
         <div class="search_area">
         	   <select name="type">
@@ -112,24 +117,34 @@
                 <option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
                 <option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
                 <option value="TCW" <c:out value="${pageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
-            </select>   
-            <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
+            </select>
+           <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
             <button>검색</button>
-        </div>
-    </div> 
-  	 </div>  
-			<div class="container text-center">	
-	<div class="pageInfo_wrap ja" >
-        <div class="pageInfo_area">
- 			<ul id="pageInfo" class="pageInfo">
+          		</div>
+        			</div>
+        				</div>
+        					</div>
+        						</div>
+        					<div class="container text-center">	
+						<div class="pageInfo_wrap ja" >
+       				 <div class="pageInfo_area">
+ 				<ul id="pageInfo" class="pageInfo">
  				
  				 <!-- 이전페이지 버튼 -->
                 <c:if test="${pageMaker.prev}">
+<<<<<<< HEAD
                     <li class="btn btn-outline-secondary"><a href="${pageMaker.startPage-1}">&laquo;</a></li>
+=======
+                    <a class="btn btn-outline-secondary" href="${pageMaker.startPage-1}">&laquo;</a>
+>>>>>>> 6ed552403be76ced568df3bf12640bb910044017
                 </c:if>
+                
+                
+                
 				
 				<!-- 각 번호 페이지 버튼 -->
                 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+<<<<<<< HEAD
                      <c:choose>
             
 			            <c:when test="${pageMaker.cri.pageNum != num }">
@@ -144,6 +159,21 @@
         
                 </c:forEach>
 
+=======
+					<c:choose>            
+						<c:when test="${pageMaker.cri.pageNum != num }">
+						<a class="<c:if test="${pageMaker.cri.pageNum != num }">btn btn-outline-secondary</c:if>"  href="${num}" >${num }</a>
+						</c:when>
+						            
+						<c:otherwise>
+						<a style="color: white;" class="btn btn-secondary" href="${num}" >${num }</a>
+						</c:otherwise>					            
+					</c:choose>        
+                </c:forEach>
+
+  
+
+>>>>>>> 6ed552403be76ced568df3bf12640bb910044017
 
 				<!-- 다음 페이지 버튼 -->
 				<c:if test="${pageMaker.next}">
@@ -174,6 +204,7 @@
 			</div>
 		</div>
 		<!--/.col (left) -->
+		</section>
      <script>
 $(document).ready(function(){
     
@@ -243,7 +274,7 @@ $(document).ready(function(){
 		
 	
 </script>
-</section>
+
 
 
   

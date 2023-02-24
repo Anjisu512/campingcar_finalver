@@ -62,8 +62,23 @@
 	</div>
 	<div class="input-group">
 		<span class="input-group-text">핸드폰 번호</span>
-		<input type="text" class="form-control" name="rent_phone1" value="" required />
+		<input type="text" id="car_uphone" class="form-control" name="rent_phone1" value="" required />
 	</div>
+	<script>
+  $(document).on("keyup", "#car_uphone", function () {
+    $(this).val(
+      $(this)
+        .val()
+        .replace(/[^0-9]/g, "")
+        .replace(
+          /(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,
+          "$1-$2-$3"
+        )
+        .replace("--", "-")
+    );
+  });
+</script>
+
 	<div class="input-group">
 		<span class="input-group-text">비밀번호</span>
 		<input type="text" class="form-control" name="rent_password" value="" required />
