@@ -290,10 +290,21 @@ document.querySelector("#btn-list").addEventListener("click",function(e){
 
 
 
-<form action="remove" method="post" style="display:inline;">
+<form action="remove" method="post" style="display:inline;" id="remove">
 	<input type="hidden" name="car_regid" value="${dto.car_regid }" />
-	<button type="submit"  class="btn btn-danger">삭제</button>
+	<a class="btn btn-danger" onclick="removeAlert();">삭제</button>
 </form>
+
+<script>
+function removeAlert(){
+	if(confirm("해당 차량을 삭제하시겠습니까?")){
+		$("#remove").submit();
+	}else{
+		return;
+	}
+}
+</script>
+
 <!-- ================================================== -->
 	</div><!-- // #wrap end -->
 </div><!-- // #container end -->

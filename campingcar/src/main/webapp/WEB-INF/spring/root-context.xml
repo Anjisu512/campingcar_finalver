@@ -14,7 +14,7 @@
 		<!-- <property name="driverClassName" value="org.mariadb.jdbc.Driver"/> -->
 		<!-- <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/webdb"></property> -->
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="jdbcUrl" value="jdbc:mysql://192.168.0.26:3307/campingcar?useUnicode=true&amp;serverTimezone=UTC"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://192.168.0.56:3307/campingcar?useUnicode=true&amp;serverTimezone=UTC"></property>
 		<property name="username" value="newuser"></property>
 		<property name="password" value="0000"></property>
 		<property name="dataSourceProperties">

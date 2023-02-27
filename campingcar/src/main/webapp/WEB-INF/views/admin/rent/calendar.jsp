@@ -92,9 +92,9 @@ function wdayReplace(wday){
 	
 	<div id="topmenu">
 		<h2>
-			<a href="?curYear=${prevYear}&curMon=${prevMon}" class="btn btn-outline-secondary"><i class="fa-solid fa-angle-left"></i></a>
+			<a href="?curYear=${prevYear}&curMon=${prevMon}" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-angle-left"></i></a>
 			<%=curYear%>년 ${curMon+1}월
-			<a href="?curYear=${nextYear}&curMon=${nextMon}" class="btn btn-outline-secondary"><i class="fa-solid fa-angle-right"></i></a>
+			<a href="?curYear=${nextYear}&curMon=${nextMon}" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-angle-right"></i></a>
 		</h2>
 		
 	</div>

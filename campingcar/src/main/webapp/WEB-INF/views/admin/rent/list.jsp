@@ -24,9 +24,10 @@
 	<%@ include file="../include/sidebar.jsp" %>
 	<!-- // #sidebar end -->
 	
-	<!-- #topmenu start -->
-	<%@ include file="../include/topmenu.jsp" %>
-	<!-- // #topmenu end -->
+	<div id="topmenu">
+		<h2><i class="fa-solid fa-house"></i> 관리자　<i class="fa-solid fa-angle-right"></i>　예약 관리　<i class="fa-solid fa-angle-right"></i>　목록형 예약 현황</h2>
+		<div id="gnb"></div>
+	</div>
 	
 	<div id="wrap">
 <!-- ================================================== -->
@@ -56,8 +57,8 @@
 	<th>예비 연락처</th>
 	<th>차량 출고일</th>
 	<th>차량 반납일</th>
-	<th>옵션1</th>
-	<th>옵션2</th>
+	<!-- <th>옵션1</th> -->
+	<!-- <th>옵션2</th> -->
 	<th>결제 비용</th>
 	<th>결제 방법</th>
 	<th>결제 상태</th>
@@ -78,8 +79,8 @@
 	<td>${dto.rent_phone2 }</td>	
 	<td>${dto.rent_startdate }</td>	
 	<td>${dto.rent_enddate }</td>	
-	<td><input type="checkbox" disabled <c:if test="${dto.rent_option1==1 }">checked</c:if> /></td>	
-	<td><input type="checkbox" disabled <c:if test="${dto.rent_option1==2 }">checked</c:if> /></td>	
+	<!-- <td><input type="checkbox" disabled <c:if test="${dto.rent_option1==1 }">checked</c:if> /></td> -->	
+	<!-- <td><input type="checkbox" disabled <c:if test="${dto.rent_option1==2 }">checked</c:if> /></td> -->	
 	<td class="right"><fmt:formatNumber value="${dto.rent_price }" pattern="#,###" /></td>	
 	<td>
 		<c:choose>

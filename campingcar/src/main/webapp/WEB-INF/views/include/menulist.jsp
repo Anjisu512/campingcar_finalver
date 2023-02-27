@@ -69,7 +69,7 @@ menuMap.put("5", new HashMap<String, Object>(){{
 }});
 menuMap.put("6", new HashMap<String, Object>(){{
 	put("title", "고객센터");	
-	put("url", "#");
+	put("url", contextPath+"/qna/qnalist?keyword=");
 	put("sub", new HashMap<String, Object>(){{
 		put("1",new HashMap<String, Object>(){{
 			put("title", "이용 문의");	

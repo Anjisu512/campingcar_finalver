@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-    
-<div id="sidebar">
+
+<div id="sidebar" class="overflow-scroll">
 	<h1>
 		<a href="${contextPath }/admin/"><img src="${contextPath }/resources/img/header/logo.png" alt="" /></a>
 		<p>관리자 페이지</p>
