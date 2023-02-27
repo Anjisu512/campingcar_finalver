@@ -35,9 +35,10 @@
 .mainrow h3 {font-family: 'GmarketSansMedium'; font-size:42px; text-align:center; text-align:center;}
 .mainrow .desc {text-align:center; padding:0px 0px 60px 0px;}
 .mainrow.para01 {background:#ffffff;}
-.carslide .card {margin:0px 15px 0px 15px; cursor:pointer; text-align:center;}
+.carslide {width:1230px;}
+.carslide .card {margin:0px 30px 0px 0px; cursor:pointer; text-align:center;}
 .carslide h5 {font-weight:bold; padding:15px 0px 0px 0px;}
-.carslide .card img {width:270px; height:270px;}
+.carslide .card img {width:277px; height:277px; border-radius: 5px 5px 0px 0px;}
 .carslide .card-text {margin:0px 0px 15px 0px;}
 .carslide .card a {color:#ffffff !important; margin:0px 0px 15px 0px;}
 
