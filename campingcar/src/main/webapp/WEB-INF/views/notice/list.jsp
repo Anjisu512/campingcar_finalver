@@ -238,7 +238,7 @@ $(document).ready(function(){
     	e.preventDefault();
    	 
     moveForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+ "'>");
-    moveForm.attr("action", "/notice/get");
+    moveForm.attr("action", "${contextPath}/notice/get");
     moveForm.submit();
 });
 
