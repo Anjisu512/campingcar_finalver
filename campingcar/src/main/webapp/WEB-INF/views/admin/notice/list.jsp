@@ -144,19 +144,7 @@ font-weight : bold;
 			          </c:choose>   
         		</c:forEach>
 
-                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-					<c:choose>            
-						<c:when test="${pageMaker.cri.pageNum != num }">
-						<a class="<c:if test="${pageMaker.cri.pageNum != num }">btn btn-outline-secondary</c:if>"  href="${num}" >${num }</a>
-						</c:when>
-						            
-						<c:otherwise>
-						<a style="color: white;" class="btn btn-secondary" href="${num}" >${num }</a>
-						</c:otherwise>					            
-					</c:choose>        
->>>>>>> 6ed552403be76ced568df3bf12640bb910044017
-                </c:forEach>
-
+  
   
 
 

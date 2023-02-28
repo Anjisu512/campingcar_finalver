@@ -25,12 +25,9 @@
 	}
 	h1 {
     font-size: 28px;
-<<<<<<< HEAD
-    
-=======
+
     -webkit-background-clip: text;
->>>>>>> 6ed552403be76ced568df3bf12640bb910044017
-}
+
 </style>
 <body>
 
@@ -135,8 +132,6 @@
 
                     <li class="btn btn-outline-secondary"><a href="${pageMaker.startPage-1}">&laquo;</a></li>
 
-                    <a class="btn btn-outline-secondary" href="${pageMaker.startPage-1}">&laquo;</a>
-
                 </c:if>
                 
                 
@@ -159,21 +154,9 @@
         
                 </c:forEach>
 
-				<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-					<c:choose>            
-						<c:when test="${pageMaker.cri.pageNum != num }">
-						<a class="<c:if test="${pageMaker.cri.pageNum != num }">btn btn-outline-secondary</c:if>"  href="${num}" >${num }</a>
-						</c:when>
-						            
-						<c:otherwise>
-						<a style="color: white;" class="btn btn-secondary" href="${num}" >${num }</a>
-						</c:otherwise>					            
-					</c:choose>        
-                </c:forEach>
 
   
 
->>>>>>> 6ed552403be76ced568df3bf12640bb910044017
 
 				<!-- 다음 페이지 버튼 -->
 				<c:if test="${pageMaker.next}">
